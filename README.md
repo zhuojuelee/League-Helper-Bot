@@ -3,9 +3,8 @@
 Welcome, this is a for fun bot.
 
 #### Getting Started
-Familiarize yourself with this [Get Started Doc](https://discordjs.guide/creating-your-bot/)
-
-Discord.js API Docs can be found [here](https://discord.js.org/#/docs/main/stable/general/welcome)
+- Familiarize yourself with this [Get Started Doc](https://discordjs.guide/creating-your-bot/)
+- Discord.js API Docs can be found [here](https://discord.js.org/#/docs/main/stable/general/welcome)
 
 Happy Programming :)
 
