@@ -2,6 +2,13 @@
 
 Welcome, this is a for fun bot.
 
+#### Getting Started
+Familiarize yourself with this [Get Started Doc](https://discordjs.guide/creating-your-bot/)
+
+Discord.js API Docs can be found [here](https://discord.js.org/#/docs/main/stable/general/welcome)
+
+Happy Programming :)
+
 ## Environment Setup Instructions
 - First, make sure you have [node.js](https://nodejs.org/en/) downloaded
 - We need a way to manage Node versions, so download `NVM` from [here](https://github.com/nvm-sh/nvm)
@@ -52,9 +59,3 @@ Run the following command to lint a specific file
 ```bash
 yarn lint <pathToFile>
 ```
-#### Getting Started
-Familiarize yourself with this [Get Started Doc](https://discordjs.guide/creating-your-bot/)
-
-Discord.js API Docs can be found [here](https://discord.js.org/#/docs/main/stable/general/welcome)
-
-Happy Programming :)
