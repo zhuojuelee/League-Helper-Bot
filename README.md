@@ -23,6 +23,7 @@ Get your [Discord access token](https://discord.com/developers) and create a fil
 
 Setup `config.js` in the following manner:
 ```js
+// config.js
 const config = {
     "DISCORD_TOKEN": "YOUR_DISCORD_TOKEN",
     "RIOT_API_KEY": "YOUR_RIOT_API_KEY"
