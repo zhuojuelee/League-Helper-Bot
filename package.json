@@ -1,5 +1,5 @@
 {
-  "name": "League",
+  "name": "league-discord-bot",
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
@@ -9,7 +9,9 @@
   "author": "Zhuo Jue Lee <zhuojuelee11@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "lint": "eslint",
+    "lint:all": "eslint ./"
   },
   "type": "module",
   "dependencies": {},

@@ -25,7 +25,7 @@ const config = {
 export default config
 ```
 
-Do NOT commit your token into Git
+Do NOT commit your token and API key into Git
 
 ## Running the Bot
 - First create your own server in Discord
@@ -43,6 +43,16 @@ Bot is running :)
 ```
 
 ## Development Guide
+#### Linting
+Run the following command to lint the entire project:
+```bash
+yarn lint:all
+```
+Run the following command to lint a specific file
+```bash
+yarn lint <pathToFile>
+```
+#### Getting Started
 Familiarize yourself with this [Get Started Doc](https://discordjs.guide/creating-your-bot/)
 
 Discord.js API Docs can be found [here](https://discord.js.org/#/docs/main/stable/general/welcome)
