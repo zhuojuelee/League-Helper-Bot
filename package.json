@@ -1,0 +1,23 @@
+{
+  "name": "League",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": ">=12.*"
+  },
+  "repository": "https://github.com/zhuojuelee/LeagueBot.git",
+  "author": "Zhuo Jue Lee <zhuojuelee11@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "discord.js": "^12.2.0",
+    "eslint": "^7.1.0"
+  }
+}
