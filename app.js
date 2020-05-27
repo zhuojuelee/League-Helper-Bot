@@ -20,13 +20,18 @@ client.once('ready', () => {
  // Create a new command property that holds a collection of commands
 client.commands = new Collection()
 
-const commandFiles = fs.readdirSync('./discord/commands').filter(file => file.endsWith('.js'));
-for (const file of commandFiles) {
-    const command = require(`./discord/commands/${file}`)
-    client.commands.set(command.name, command)
-}
+// const commandFiles = fs.readdirSync('./discord/commands').filter(file => file.endsWith('.js'));
+// for (const file of commandFiles) {
+//     const command = `./discord/commands/${file}`)
+//     client.commands.set(command.name, command)
+// }
 
 client.on('message', (message) => {
+    // Make sure that non command messages and bot messages are not processed
+    if (!message.content.startsWith(discordConfig.commandPrefix) || message.author.bot) return
+
+    console.log(`Received Message: ${message}`)
+    message.reply('Test Reply')
     try {
         if (message.content.startsWith(discordConfig.commandPrefix)) {
         }
