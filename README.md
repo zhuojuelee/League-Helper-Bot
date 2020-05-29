@@ -32,7 +32,7 @@ const config = {
 export default config
 ```
 
-Do NOT commit your token and API key into Git
+Do **NOT** commit your token and API key into Git
 
 ## Running the Bot
 - First create your own server in Discord
