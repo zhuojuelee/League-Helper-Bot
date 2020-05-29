@@ -21,7 +21,7 @@ yarn --frozen-lockfile
 #### Token Setup
 Get your [Discord access token](https://discord.com/developers) and create a file called `config.js` in the root folder. This is where your access token will go.
 
-Setup `config.js` in the following manner:
+Setup `config.base.js` in the following manner:
 ```js
 // config.js
 const config = {

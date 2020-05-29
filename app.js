@@ -1,10 +1,14 @@
-import config from './config.js'
+import config from './config.base.js'
 import discordConfig from './discord/config.js'
 import fs from 'fs'
 import { Client, Collection } from 'discord.js'
+import path from 'path'
 
 // Instantiate Discord client
 const client = new Client();
+
+// Useful vars
+const prefix = discordConfig.commandPrefix
 
 // Bot startup indicator
 client.once('ready', () => {
@@ -20,25 +24,39 @@ client.once('ready', () => {
  // Create a new command property that holds a collection of commands
 client.commands = new Collection()
 
-// const commandFiles = fs.readdirSync('./discord/commands').filter(file => file.endsWith('.js'));
-// for (const file of commandFiles) {
-//     const command = `./discord/commands/${file}`)
-//     client.commands.set(command.name, command)
-// }
+// Get all the commands available
+const commandFiles = fs.readdirSync('./discord/commands').filter(file => file.endsWith('.js'));
+
+// Mapping commands to their module
+for (const file of commandFiles) {
+    const commandName = path.parse(file).name
+    import(`./discord/commands/${file}`).then(moduleObj => {
+        const command = moduleObj[commandName]
+        client.commands.set(command.name, command)
+    })
+}
 
 client.on('message', (message) => {
-    // Make sure that non command messages and bot messages are not processed
-    if (!message.content.startsWith(discordConfig.commandPrefix) || message.author.bot) return
+    // Return if non command messages and bot messages are sent
+    if (!message.content.startsWith(prefix) || message.author.bot) return
 
-    console.log(`Received Message: ${message}`)
-    message.reply('Test Reply')
+    // Get the message args and command
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    console.log(`Received command: ${command}`)
+    console.log(`Received the following command arugments: ${args}`)
+
+    // Return if the command does not exist
+    if (!client.commands.has(command)) return;
+
     try {
-        if (message.content.startsWith(discordConfig.commandPrefix)) {
-        }
+        client.commands.get(command).execute(message, args)
     } catch(error) {
         console.error(error)
         message.reply('Invalid command, use !help to see list of available commands.')
     }
 })
 
+// Login to discord
 client.login(config.DISCORD_TOKEN)
